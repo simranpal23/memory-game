@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image:url('https://img.freepik.com/premium-photo/3d-illustration-sticky-note-papers-cream-wall-work-organization-theme_551230-455.jpg?semt=ais_user');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  background: #0d614b;
+  padding: 40px 60px;
+  border-radius: 50px;
+}
+
+h1 {
+  font-size: 3em;
+  color: #fff;
+  letter-spacing: 0.1em;
+}
+
+.reset-button {
+  padding: 15px 20px;
+  color: #267c65;
+  background: #fff;
+  border: none;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 16px;
+}
+
+.reset-button:focus {
+  color: #fff;
+  background: #267c65;
+
+}
+
+.game {
+  width: 420px; 
+  height: 420px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(4, 1fr); 
+  gap: 10px;
+}
+
+.item {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  background: #fff;
+  transition: 0.25s;
+}
+
+.item.boxOpen {
+  transform: rotateY(180deg);
+  border-radius: 50px;
+}
+
+.item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:#FFC5C5;
+  transition: 0.25s;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  border-radius: 50px;
+}
+
+.boxOpen::after,
+.boxMatch::after {
+  transform: rotateY(180deg);
+}
+p{
+  font-size: 2em;
+  color: #fff;
+  text-transform: 0.1em;
+  letter-spacing: 0.1em;
+}
